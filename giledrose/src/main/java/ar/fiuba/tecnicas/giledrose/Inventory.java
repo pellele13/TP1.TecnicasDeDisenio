@@ -27,6 +27,10 @@ public class Inventory {
 				updateStrategy = new UpdateStrategyAgedBrieItem();
 			}else if (item.getName() == "Backstage passes to a TAFKAL80ETC concert"){
 				updateStrategy = new UpdateStrategyBackstagePassesItem();
+			}else if (item.getName() == "Sulfuras, Hand of Ragnaros"){
+				updateStrategy = new UpdateStrategySulfurasItem();
+			}else if (item.getName() == "Conjured Mana Cake"){
+				updateStrategy = new UpdateStrategyConjuredItem();
 			}else{
 				updateStrategy = new UpdateStrategyCommonItem();
 			}
