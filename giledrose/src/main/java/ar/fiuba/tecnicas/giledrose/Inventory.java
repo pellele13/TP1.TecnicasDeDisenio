@@ -3,6 +3,8 @@ package ar.fiuba.tecnicas.giledrose;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import ar.fiuba.tecnicas.giledroseStrategy.*;
+
 public class Inventory {
     private Collection<Item> items;
 
@@ -15,7 +17,23 @@ public class Inventory {
     }
 
     public void updateQuality() {
-    	//refactor del metodo usando patron de diseño a definir.
+		UpdateStrategy updateStrategy = null;
+		
+		for(Item item:items){
+			
+			item.setSellIn(item.getSellIn()-1);
+			
+			if(item.getName() == "Aged Brie"){
+				updateStrategy = new UpdateStrategyAgedBrieItem();
+			}else if (item.getName() == "Backstage passes to a TAFKAL80ETC concert"){
+				updateStrategy = new UpdateStrategyBackstagePassesItem();
+			}else{
+				updateStrategy = new UpdateStrategyCommonItem();
+			}
+
+			updateStrategy.update(item);
+		}
+
     }
 
     public Collection<Item> getItems() {
