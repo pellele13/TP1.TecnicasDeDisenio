@@ -1,5 +1,6 @@
-package ar.fiuba.tecnicas.giledrose;
+package ar.fiuba.tecnicas.giledroseStrategy;
 
+import ar.fiuba.tecnicas.giledrose.Item;
 import ar.fiuba.tecnicas.giledroseStrategy.*;
 
 public class UpdateStrategyBackstagePassesItem implements UpdateStrategy {
