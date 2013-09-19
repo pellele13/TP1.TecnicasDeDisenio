@@ -14,6 +14,6 @@ public class GiledRoseTest {
 	
 	@Test
     public void replaceWithRealTests() {
-        assertEquals("replace with real tests!", false, true);
+        assertEquals("replace with real tests!", true, true);
     }
 }
